@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# PyCharm
+.idea/
+
+# Virtual environments
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# Training checkpoints
+*.pt
+*.pth
+
+# Logs
+*.log
