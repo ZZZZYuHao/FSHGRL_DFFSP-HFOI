@@ -1,20 +1,18 @@
-# Python
 __pycache__/
 *.py[cod]
-
-# PyCharm
 .idea/
-
-# Virtual environments
 .venv/
 venv/
-
-# macOS
 .DS_Store
-
-# Training checkpoints
+._*
 *.pt
 *.pth
-
-# Logs
 *.log
+result/*
+!result/__init__.py
+!result/*.py
+photo/
+.pytest_cache/
+tests/golden/_work/
+paper_assets/figures/generated/
+paper_assets/tables/*.tex

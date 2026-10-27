@@ -1,0 +1,30 @@
+instance_id: DDT500_num150
+tier: benchmark
+source: external
+file: DDT500_num150.txt
+n_products: 5
+n_stages: 5
+n_machines: 25
+machine_division:
+- 5
+- 5
+- 5
+- 5
+- 5
+n_orders: 150
+ddt: 500
+orders_per_product:
+- 38
+- 31
+- 26
+- 23
+- 32
+arrival_first: 1.0
+arrival_last: 3169.0
+inter_arrival_mean: 21.261744966442954
+due_slack_min: 314.0
+due_slack_mean: 531.6666666666666
+due_slack_max: 786.0
+process_time_min: 26.0
+process_time_mean: 187.248
+process_time_max: 450.0

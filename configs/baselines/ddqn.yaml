@@ -1,0 +1,5 @@
+# Double DQN baseline: as dqn.yaml, the online network selects and the target network evaluates the next action.
+algo:
+  algorithm: ddqn
+  train:
+    experiment_name: ddqn

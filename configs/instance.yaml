@@ -1,0 +1,15 @@
+# Instance set and generator settings.
+instance:
+  problem: dffsp_hfoi                 # dynamic flexible flow shop, high-frequency order insertion
+  data_dir: data/instances/benchmark  # one folder per instance (<id>/<id>.txt + params.yaml), scanned recursively
+  patterns: ["DDT*.txt", "num*.txt", "train_num*.txt"]   # glob patterns used when train_instances is empty
+  train_instances: ["DDT500_num100.txt"]  # fixed instance file(s); `--instances` on the CLI has priority
+  instance_selection: fixed           # fixed | round_robin | random (how the instance is picked per iteration)
+  generator:                          # paper Table 5 (data/generator.py); not used by the benchmark set
+    n_products: 5
+    n_stages: 5
+    machines_per_stage: 5
+    process_time_range: [25, 450]     # seconds, discrete uniform
+    inter_arrival_range: [1, 200]     # seconds, discrete uniform
+    ddt_range: [300, 2500]            # due-date tightness (mean of d_s - a_s)
+    n_orders_range: [20, 200]

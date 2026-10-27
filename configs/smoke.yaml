@@ -1,0 +1,14 @@
+# Smoke overlay (scripts/run_00_smoke.py): 2 iterations x 2 environments on one instance, no Visdom,
+# a checkpoint every iteration (tools/eval_curve.py can be exercised on the smoke run).
+instance:
+  train_instances: [DDT500_num50.txt]
+algo:
+  train:
+    max_iterations: 2
+    num_envs: 2
+    num_workers: 2
+    minibatch_size: 128
+    checkpoint_every: 1
+    resume: none
+  viz:
+    viz: false

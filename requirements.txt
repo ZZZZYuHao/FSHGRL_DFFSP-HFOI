@@ -1,0 +1,16 @@
+# Core (training, evaluation, baselines)
+torch>=2.1
+numpy>=1.24
+pandas>=2.0
+pyyaml>=6.0
+# Statistics and figures
+scipy>=1.10
+matplotlib>=3.7
+seaborn>=0.13
+# Tests
+pytest>=7.0
+# Optional: exact fluid LP (needs a licence); the code falls back to a heuristic without it
+# gurobipy>=10.0
+# Optional: live training charts / resource logging
+# visdom>=0.2
+# psutil>=5.9

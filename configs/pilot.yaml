@@ -1,0 +1,9 @@
+# Pilot experiment (scripts/run_02_pilot.py). Disabled: the paradigm is per-instance training on the 15
+# benchmark instances themselves (training set = evaluation set), so a pilot tier would spend the CPU-only
+# budget on instances outside every reported result. Reason recorded in docs/experiment-spec.md (change log)
+# and docs/pilot-log.md. When enabled, the methods below are trained for max_iterations on the pilot
+# instances and the verdict compares the proposed method with the best rule reference.
+enabled: false
+instances: [DDT500_num50, DDT900_num100, DDT1600_num150]
+methods: [ours, a2c, dqn, ddqn]
+max_iterations: 200

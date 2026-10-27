@@ -1,0 +1,16 @@
+instance_id,tier,scale,ddt,n_orders,n_products,n_stages,n_machines,source,path
+DDT500_num50,benchmark,50,500,50,5,5,25,external,data/instances/benchmark/DDT500_num50/DDT500_num50.txt
+DDT500_num100,benchmark,100,500,100,5,5,25,external,data/instances/benchmark/DDT500_num100/DDT500_num100.txt
+DDT500_num150,benchmark,150,500,150,5,5,25,external,data/instances/benchmark/DDT500_num150/DDT500_num150.txt
+DDT600_num50,benchmark,50,600,50,5,5,25,external,data/instances/benchmark/DDT600_num50/DDT600_num50.txt
+DDT600_num100,benchmark,100,600,100,5,5,25,external,data/instances/benchmark/DDT600_num100/DDT600_num100.txt
+DDT600_num150,benchmark,150,600,150,5,5,25,external,data/instances/benchmark/DDT600_num150/DDT600_num150.txt
+DDT900_num50,benchmark,50,900,50,5,5,25,external,data/instances/benchmark/DDT900_num50/DDT900_num50.txt
+DDT900_num100,benchmark,100,900,100,5,5,25,external,data/instances/benchmark/DDT900_num100/DDT900_num100.txt
+DDT900_num150,benchmark,150,900,150,5,5,25,external,data/instances/benchmark/DDT900_num150/DDT900_num150.txt
+DDT1200_num50,benchmark,50,1200,50,5,5,25,external,data/instances/benchmark/DDT1200_num50/DDT1200_num50.txt
+DDT1200_num100,benchmark,100,1200,100,5,5,25,external,data/instances/benchmark/DDT1200_num100/DDT1200_num100.txt
+DDT1200_num150,benchmark,150,1200,150,5,5,25,external,data/instances/benchmark/DDT1200_num150/DDT1200_num150.txt
+DDT1600_num50,benchmark,50,1600,50,5,5,25,external,data/instances/benchmark/DDT1600_num50/DDT1600_num50.txt
+DDT1600_num100,benchmark,100,1600,100,5,5,25,external,data/instances/benchmark/DDT1600_num100/DDT1600_num100.txt
+DDT1600_num150,benchmark,150,1600,150,5,5,25,external,data/instances/benchmark/DDT1600_num150/DDT1600_num150.txt

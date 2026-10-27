@@ -1,0 +1,25 @@
+"""Convergence curves (incumbent objective versus epoch, mean +- std over runs) of the trained methods,
+from result/conv_<method>.csv written by result/aggregate.py."""
+import pandas as pd
+from _common import OUT_DIR, RESULT, require
+
+from result.plot import plot_convergence
+from result.stats import METHOD_LABELS
+
+METHODS = ["ours", "nf", "ng", "a2c", "dqn", "ddqn"]
+
+
+def main() -> None:
+    series = []
+    for method in METHODS:
+        path = RESULT / f"conv_{method}.csv"
+        if path.exists():
+            series.append((pd.read_csv(path), METHOD_LABELS.get(method, method)))
+    if not series:
+        require(RESULT / "conv_ours.csv")
+        return
+    print("[FIG]", plot_convergence(series, OUT_DIR / "convergence", ylabel="Incumbent objective (1 - fulfilment)"))
+
+
+if __name__ == "__main__":
+    main()

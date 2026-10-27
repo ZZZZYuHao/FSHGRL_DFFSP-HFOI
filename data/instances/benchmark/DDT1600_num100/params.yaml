@@ -1,0 +1,30 @@
+instance_id: DDT1600_num100
+tier: benchmark
+source: external
+file: DDT1600_num100.txt
+n_products: 5
+n_stages: 5
+n_machines: 25
+machine_division:
+- 5
+- 5
+- 5
+- 5
+- 5
+n_orders: 100
+ddt: 1600
+orders_per_product:
+- 23
+- 12
+- 30
+- 19
+- 16
+arrival_first: 1.0
+arrival_last: 2059.0
+inter_arrival_mean: 20.78787878787879
+due_slack_min: 989.0
+due_slack_mean: 1536.24
+due_slack_max: 2476.0
+process_time_min: 27.0
+process_time_mean: 192.896
+process_time_max: 445.0

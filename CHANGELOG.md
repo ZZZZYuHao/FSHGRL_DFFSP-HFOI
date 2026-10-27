@@ -1,0 +1,19 @@
+# 变更记录（分支 `claude/refactor-opt-paper`，基线提交 `c030dfa`）
+
+每步都以 `python -m tests.equivalence`（hgnn 与 mlp 各 3 轮训练，57 个浮点列与全部检查点张量逐位相等）验收。
+
+- C0 等价性回归测试与黄金文件（`tests/equivalence/`、`tests/golden/`）、`requirements.txt`、`.gitignore`。
+- C1 删除旧平台（`env/`、`agent/competitionPlatform.py`、`agent/algorithm_main.py`）、旧版基线、`test_code/`、旧绘图/统计脚本；
+  删除策略网络中不可达的单状态/稠密路径；成品图移至 `paper_assets/figures/legacy/`。
+- C2 五大模块骨架搬移 + 转发模块（`data/instance_io.py`、`environment/simulator.py`、`agent/{buffer,networks,networks_mlp,ppo,checkpoint}.py`、`rollout.py`、`data/dataset.py`、根 `train.py`）。
+- C3 YAML 配置 + dataclass 加载器 + 旧字典桥接（`configs/`）、`tests/test_config_bridge.py`、`train.py --config/--run-name/--smoke`。
+- C4 `result/logger.py`（`log.csv`、`curve.csv`、`config_snapshot.yaml`、`train_meta.yaml`、`fixed_set_final.csv`）、`result/metrics.py`、每轮贪心评估与 `best_greedy_checkpoint.pt`。
+- C5 算例按文件夹存放 + `index.csv` + `params.yaml`、`eval.py`、`environment/profiled.py`、`agent/checkpoint.py` 加载器、`tools/{eval_curve,profile_num_envs}.py`。
+- C6 规则基线 `agent/baselines/rules.py` + `baselines/run_rules.py` + `data/instances/reference.csv`、`tests/test_rules.py`（含奖励恒等式）。
+- C7 学习型基线 A2C/DQN/DDQN（`agent/baselines/`）、`agent/factory.py` 分派、`configs/baselines/`。
+- C8 `result/stats.py`（精确 Wilcoxon + Holm + Friedman）、`result/plot.py`、`result/aggregate.py`、`paper_assets/`。
+- C9 `scripts/run_00..09 + run_all`、`configs/{smoke,runs,parallel,pilot}.yaml`、`data/generator.py`、README 十节、`docs/`。
+- C10 收尾验证与汇报。
+- C11 多进程轨迹采集（`environment/collector.py`、`rollout.collect_vectorized_rollouts_parallel`、`env.collector_workers`）：
+  仿真器与观测构建分到 worker 进程，策略前向、采样与更新留在训练进程，同 `num_envs` 下采集数据逐位一致
+  （`tests/test_collector.py`、`python -m tests.equivalence --collector-workers 3`）；`tools/profile_collector.py` 定档；默认关闭。

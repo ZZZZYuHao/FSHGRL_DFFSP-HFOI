@@ -1,0 +1,6 @@
+# Extra ablation: no self-attention over the candidate actions.
+algo:
+  attention:
+    use_sparse_attention: false
+  train:
+    experiment_name: ab_no_sparse_attn

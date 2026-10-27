@@ -1,0 +1,3 @@
+# Default concurrency of the run scripts (an integer argument on the command line overrides it).
+max_concurrent: 2         # concurrent jobs; clamped to the machine (cores, free memory) with a printed reason
+threads_per_job: 1        # BLAS / torch threads per job (OMP_NUM_THREADS etc.); 1 keeps runs comparable

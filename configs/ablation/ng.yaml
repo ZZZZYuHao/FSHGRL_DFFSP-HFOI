@@ -1,0 +1,5 @@
+# FSHGRL-NG: point-wise MLP encoders replace the heterogeneous graph encoder.
+algo:
+  model_type: mlp
+  train:
+    experiment_name: ab_ng

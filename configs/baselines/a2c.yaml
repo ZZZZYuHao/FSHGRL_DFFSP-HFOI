@@ -1,0 +1,6 @@
+# A2C baseline (agent/baselines/a2c.py): the PPO network and rollout, Monte-Carlo returns and one
+# gradient step per iteration. New code; the original repository holds no results to compare against.
+algo:
+  algorithm: a2c
+  train:
+    experiment_name: a2c
